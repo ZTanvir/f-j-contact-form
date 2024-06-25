@@ -9,7 +9,7 @@ const FormInput = ({ label, type, name, id, value, onChange, errorMsg }) => {
         value={value}
         onChange={onChange}
       />
-      <div>{errorMsg}</div>
+      <p>{errorMsg}</p>
     </div>
   );
 };

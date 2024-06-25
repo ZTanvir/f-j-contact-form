@@ -61,6 +61,7 @@ function App() {
               checked={formValue["query"] === "support"}
             />
             <label htmlFor="supportQuery">Support Request</label>
+            <p>Please select a query type</p>
           </div>
           <div>
             <label htmlFor="msg">Message</label>
@@ -70,6 +71,7 @@ function App() {
               value={formValue["message"]}
               onChange={handleInputData}
             ></textarea>
+            <p>This field is required</p>
           </div>
           <div>
             <input
@@ -82,6 +84,7 @@ function App() {
             <label htmlFor="agreed">
               I consent to being contacted by the team
             </label>
+            <p>To submit this form,please consent to being contacted</p>
           </div>
           <button type="submit">Submit</button>
         </form>
