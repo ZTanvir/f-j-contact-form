@@ -28,41 +28,57 @@ function App() {
   return (
     <>
       <main>
-        <form onSubmit={handleformSubmit}>
+        <form id="contactUs" onSubmit={handleformSubmit}>
           <legend>Contact Us</legend>
-          {formData.map((input) => (
+          <div className="inputFnameLname">
+            {formData.map((input) => (
+              <FormInput
+                key={input.id}
+                {...input}
+                label={input.lable}
+                id={input.name}
+                value={formValue[input.name]}
+                onChange={handleInputData}
+              />
+            ))}
+          </div>
+          <div className="inputEmail">
             <FormInput
-              key={input.id}
-              {...input}
-              label={input.lable}
-              id={input.name}
-              value={formValue[input.name]}
-              onChange={handleInputData}
+              name="mail"
+              errorMsg="Please enter a valid email address"
+              id={crypto.randomUUID()}
+              label="Email Address"
+              type="email"
             />
-          ))}
-          <div>
+          </div>
+          <div className="inputQuery">
             <p>Query Type</p>
-            <input
-              type="radio"
-              name="query"
-              id="generalQuery"
-              value="general"
-              onChange={handleInputData}
-              checked={formValue["query"] === "general"}
-            />
-            <label htmlFor="generalQuery">General Enquiry</label>
+            <div>
+              <input
+                type="radio"
+                name="query"
+                id="generalQuery"
+                value="general"
+                onChange={handleInputData}
+                checked={formValue["query"] === "general"}
+              />
+              <label htmlFor="generalQuery">General Enquiry</label>
+            </div>
 
-            <input
-              type="radio"
-              name="query"
-              id="supportQuery"
-              value="support"
-              onChange={handleInputData}
-              checked={formValue["query"] === "support"}
-            />
-            <label htmlFor="supportQuery">Support Request</label>
+            <div>
+              <input
+                type="radio"
+                name="query"
+                id="supportQuery"
+                value="support"
+                onChange={handleInputData}
+                checked={formValue["query"] === "support"}
+              />
+              <label htmlFor="supportQuery">Support Request</label>
+            </div>
             <p>Please select a query type</p>
           </div>
+
           <div>
             <label htmlFor="msg">Message</label>
             <textarea
@@ -73,6 +89,7 @@ function App() {
             ></textarea>
             <p>This field is required</p>
           </div>
+
           <div>
             <input
               type="checkbox"
@@ -86,6 +103,7 @@ function App() {
             </label>
             <p>To submit this form,please consent to being contacted</p>
           </div>
+
           <button type="submit">Submit</button>
         </form>
       </main>

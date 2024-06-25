@@ -13,14 +13,6 @@ const FormData = [
     name: "lname",
     errorMsg: "This field is required",
   },
-
-  {
-    id: crypto.randomUUID(),
-    lable: "Email Address",
-    type: "email",
-    name: "mail",
-    errorMsg: "Please enter a valid email address",
-  },
 ];
 
 export default FormData;

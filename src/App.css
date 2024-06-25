@@ -60,3 +60,38 @@ h6 {
 #__next {
   isolation: isolate;
 }
+#root {
+  --green-lighter: hsl(148, 38%, 91%);
+  --green-medium: hsl(169, 82%, 27%);
+  --red: hsl(0, 66%, 54%);
+
+  --white: hsl(0, 0%, 100%);
+  --grey-medium: hsl(186, 15%, 59%);
+  --grey-darker: hsl(187, 24%, 22%);
+}
+
+body {
+  height: 100vh;
+  background-color: yellow;
+}
+
+#contactUs {
+  display: flex;
+  flex-direction: column;
+  max-width: 768px;
+  margin: 0 auto;
+  border: 1px solid red;
+}
+#contactUs input {
+  font-size: 16px;
+  font-size: max(16px, 1em);
+  font-family: inherit;
+  padding: 0.25em 0.5em;
+  background-color: var(--white, #fff);
+  border: 1px solid #8b8a8b;
+  border-radius: 10px;
+}
+#contactUs input:not(textarea) {
+  line-height: 1;
+  height: 2.25rem;
+}
