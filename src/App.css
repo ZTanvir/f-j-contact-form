@@ -60,7 +60,7 @@ h6 {
 #__next {
   isolation: isolate;
 }
-#root {
+:root {
   --green-lighter: hsl(148, 38%, 91%);
   --green-medium: hsl(169, 82%, 27%);
   --red: hsl(0, 66%, 54%);
@@ -72,7 +72,10 @@ h6 {
 
 body {
   height: 100vh;
-  background-color: yellow;
+  background-color: var(--green-lighter);
+}
+#contactUs legend {
+  font-size: 2rem;
 }
 
 #contactUs {
@@ -80,7 +83,8 @@ body {
   flex-direction: column;
   max-width: 768px;
   margin: 0 auto;
-  border: 1px solid red;
+  background-color: var(--white);
+  padding: 2rem;
 }
 #contactUs input {
   font-size: 16px;
@@ -94,4 +98,38 @@ body {
 #contactUs input:not(textarea) {
   line-height: 1;
   height: 2.25rem;
+}
+#contactUs textarea {
+  resize: vertical;
+}
+
+#contactUs > div:not(.inputFnameLname) {
+  display: flex;
+  flex-direction: column;
+}
+#contactUs .inputFnameLname {
+  display: flex;
+  gap: 1rem;
+}
+#contactUs .inputFnameLname > div {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+:is(.querySupport, .queryGeneral) {
+  display: flex;
+  align-items: center;
+  border: 1px solid #8b8a8b;
+  border-radius: 10px;
+  gap: 0.5rem;
+  padding: 0.25rem 1rem;
+}
+:is(
+    .querySupport:hover,
+    .querySupport:focus,
+    .queryGeneral:hover,
+    .querySupport:focus
+  ) {
+  cursor: pointer;
 }

@@ -36,24 +36,24 @@ function App() {
                 key={input.id}
                 {...input}
                 label={input.lable}
+                className={input.name}
                 id={input.name}
                 value={formValue[input.name]}
                 onChange={handleInputData}
               />
             ))}
           </div>
-          <div className="inputEmail">
-            <FormInput
-              name="mail"
-              errorMsg="Please enter a valid email address"
-              id={crypto.randomUUID()}
-              label="Email Address"
-              type="email"
-            />
-          </div>
+          <FormInput
+            className="inputEmail"
+            name="mail"
+            errorMsg="Please enter a valid email address"
+            id={crypto.randomUUID()}
+            label="Email Address"
+            type="email"
+          />
           <div className="inputQuery">
             <p>Query Type</p>
-            <div>
+            <label className="queryGeneral">
               <input
                 type="radio"
                 name="query"
@@ -62,10 +62,10 @@ function App() {
                 onChange={handleInputData}
                 checked={formValue["query"] === "general"}
               />
-              <label htmlFor="generalQuery">General Enquiry</label>
-            </div>
+              General Enquiry
+            </label>
 
-            <div>
+            <label className="querySupport">
               <input
                 type="radio"
                 name="query"
@@ -74,12 +74,12 @@ function App() {
                 onChange={handleInputData}
                 checked={formValue["query"] === "support"}
               />
-              <label htmlFor="supportQuery">Support Request</label>
-            </div>
+              Support Request
+            </label>
             <p>Please select a query type</p>
           </div>
 
-          <div>
+          <div className="inputMsg">
             <label htmlFor="msg">Message</label>
             <textarea
               name="message"
@@ -90,7 +90,7 @@ function App() {
             <p>This field is required</p>
           </div>
 
-          <div>
+          <div className="inputCheckbox">
             <input
               type="checkbox"
               name="agree"

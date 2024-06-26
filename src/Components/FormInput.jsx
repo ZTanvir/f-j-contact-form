@@ -1,6 +1,15 @@
-const FormInput = ({ label, type, name, id, value, onChange, errorMsg }) => {
+const FormInput = ({
+  label,
+  className,
+  type,
+  name,
+  id,
+  value,
+  onChange,
+  errorMsg,
+}) => {
   return (
-    <div>
+    <div className={className}>
       <label htmlFor={id}>{label}</label>
       <input
         type={type}
