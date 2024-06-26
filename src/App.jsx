@@ -95,16 +95,19 @@ function App() {
           </div>
 
           <div className="inputCheckbox">
-            <input
-              type="checkbox"
-              name="agree"
-              id="agreed"
-              checked={formValue["agree"]}
-              onChange={handleCheckBox}
-            />
-            <label htmlFor="agreed">
-              I consent to being contacted by the team
-            </label>
+            <div className="inputTypeCheck">
+              <input
+                type="checkbox"
+                name="agree"
+                id="agreed"
+                checked={formValue["agree"]}
+                onChange={handleCheckBox}
+              />
+              <label htmlFor="agreed">
+                I consent to being contacted by the team
+              </label>
+            </div>
+
             <p>To submit this form,please consent to being contacted</p>
           </div>
 
