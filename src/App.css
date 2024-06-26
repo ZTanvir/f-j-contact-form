@@ -73,7 +73,11 @@ h6 {
 body {
   height: 100vh;
   background-color: var(--green-lighter);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 #contactUs legend {
   font-size: 2rem;
 }
@@ -85,6 +89,7 @@ body {
   margin: 0 auto;
   background-color: var(--white);
   padding: 2rem;
+  gap: 1rem;
 }
 #contactUs input {
   font-size: 16px;
