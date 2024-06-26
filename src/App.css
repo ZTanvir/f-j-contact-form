@@ -100,7 +100,9 @@ body {
   height: 2.25rem;
 }
 #contactUs textarea {
-  resize: vertical;
+  resize: none;
+  border: 1px solid #8b8a8b;
+  border-radius: 10px;
 }
 
 #contactUs > div:not(.inputFnameLname) {
@@ -116,8 +118,12 @@ body {
   display: flex;
   flex-direction: column;
 }
-
+.radioQuery {
+  display: flex;
+  gap: 1rem;
+}
 :is(.querySupport, .queryGeneral) {
+  flex-grow: 1;
   display: flex;
   align-items: center;
   border: 1px solid #8b8a8b;

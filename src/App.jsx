@@ -53,29 +53,32 @@ function App() {
           />
           <div className="inputQuery">
             <p>Query Type</p>
-            <label className="queryGeneral">
-              <input
-                type="radio"
-                name="query"
-                id="generalQuery"
-                value="general"
-                onChange={handleInputData}
-                checked={formValue["query"] === "general"}
-              />
-              General Enquiry
-            </label>
+            <div className="radioQuery">
+              <label className="queryGeneral">
+                <input
+                  type="radio"
+                  name="query"
+                  id="generalQuery"
+                  value="general"
+                  onChange={handleInputData}
+                  checked={formValue["query"] === "general"}
+                />
+                General Enquiry
+              </label>
 
-            <label className="querySupport">
-              <input
-                type="radio"
-                name="query"
-                id="supportQuery"
-                value="support"
-                onChange={handleInputData}
-                checked={formValue["query"] === "support"}
-              />
-              Support Request
-            </label>
+              <label className="querySupport">
+                <input
+                  type="radio"
+                  name="query"
+                  id="supportQuery"
+                  value="support"
+                  onChange={handleInputData}
+                  checked={formValue["query"] === "support"}
+                />
+                Support Request
+              </label>
+            </div>
+
             <p>Please select a query type</p>
           </div>
 
@@ -86,6 +89,7 @@ function App() {
               id="msg"
               value={formValue["message"]}
               onChange={handleInputData}
+              rows="4"
             ></textarea>
             <p>This field is required</p>
           </div>
