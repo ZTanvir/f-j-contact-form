@@ -90,6 +90,8 @@ body {
   background-color: var(--white);
   padding: 2rem;
   gap: 1rem;
+  border-radius: 16px;
+  overflow: hidden;
 }
 #contactUs input {
   font-size: 16px;
@@ -148,4 +150,13 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+#contactUs button[type="submit"] {
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: var(--green-medium);
+  cursor: pointer;
+  color: white;
+  border: none;
 }
