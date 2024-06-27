@@ -7,6 +7,7 @@ const FormInput = ({
   value,
   onChange,
   errorMsg,
+  isRequired,
 }) => {
   return (
     <div className={className}>
@@ -19,8 +20,9 @@ const FormInput = ({
         id={id}
         value={value}
         onChange={onChange}
+        required={isRequired}
       />
-      <p>{errorMsg}</p>
+      <p className="errorMessage">{errorMsg}</p>
     </div>
   );
 };

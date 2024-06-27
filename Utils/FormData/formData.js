@@ -5,6 +5,7 @@ const FormData = [
     type: "text",
     name: "fname",
     errorMsg: "This field is required",
+    isRequired: true,
   },
   {
     id: crypto.randomUUID(),
@@ -12,6 +13,7 @@ const FormData = [
     type: "text",
     name: "lname",
     errorMsg: "This field is required",
+    isRequired: true,
   },
 ];
 

@@ -40,6 +40,7 @@ function App() {
                 id={input.name}
                 value={formValue[input.name]}
                 onChange={handleInputData}
+                isRequired={input.isRequired}
               />
             ))}
           </div>
@@ -50,6 +51,7 @@ function App() {
             id={crypto.randomUUID()}
             label="Email Address"
             type="email"
+            isRequired={true}
           />
           <div className="inputQuery">
             <p>
@@ -64,6 +66,7 @@ function App() {
                   value="general"
                   onChange={handleInputData}
                   checked={formValue["query"] === "general"}
+                  required
                 />
                 General Enquiry
               </label>
@@ -80,8 +83,7 @@ function App() {
                 Support Request
               </label>
             </div>
-
-            <p>Please select a query type</p>
+            <p className="errorMessage">Please select a query type</p>
           </div>
 
           <div className="inputMsg">
@@ -94,8 +96,9 @@ function App() {
               value={formValue["message"]}
               onChange={handleInputData}
               rows="4"
+              required
             ></textarea>
-            <p>This field is required</p>
+            <p className="errorMessage">This field is required</p>
           </div>
 
           <div className="inputCheckbox">
@@ -106,13 +109,15 @@ function App() {
                 id="agreed"
                 checked={formValue["agree"]}
                 onChange={handleCheckBox}
+                required
               />
               <label htmlFor="agreed">
                 I consent to being contacted by the team
               </label>
             </div>
-
-            <p>To submit this form,please consent to being contacted</p>
+            <p className="errorMessage">
+              To submit this form,please consent to being contacted
+            </p>
           </div>
 
           <button type="submit">Submit</button>

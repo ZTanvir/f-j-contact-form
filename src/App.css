@@ -164,3 +164,17 @@ body {
   color: var(--grey-darker);
   font-size: 0.75rem;
 }
+.errorMessage {
+  color: var(--red);
+  font-size: 0.85rem;
+  padding: 3px;
+  visibility: hidden;
+}
+:is(
+    #contactUs input:invalid ~ .errorMessage,
+    #contactUs textarea:invalid ~ .errorMessage,
+    .inputTypeCheck:has(input:invalid) ~ .errorMessage,
+    .radioQuery:has(input:invalid) ~ .errorMessage
+  ) {
+  visibility: visible;
+}
