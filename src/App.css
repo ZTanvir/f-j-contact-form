@@ -160,3 +160,7 @@ body {
   color: white;
   border: none;
 }
+.isFieldRequired {
+  color: var(--grey-darker);
+  font-size: 0.75rem;
+}

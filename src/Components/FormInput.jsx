@@ -10,7 +10,9 @@ const FormInput = ({
 }) => {
   return (
     <div className={className}>
-      <label htmlFor={id}>{label}</label>
+      <label htmlFor={id}>
+        {label} <span className="isFieldRequired">*</span>
+      </label>
       <input
         type={type}
         name={name}

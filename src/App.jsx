@@ -52,7 +52,9 @@ function App() {
             type="email"
           />
           <div className="inputQuery">
-            <p>Query Type</p>
+            <p>
+              Query Type <span className="isFieldRequired">*</span>
+            </p>
             <div className="radioQuery">
               <label className="queryGeneral">
                 <input
@@ -83,7 +85,9 @@ function App() {
           </div>
 
           <div className="inputMsg">
-            <label htmlFor="msg">Message</label>
+            <label htmlFor="msg">
+              Message <span className="isFieldRequired">*</span>
+            </label>
             <textarea
               name="message"
               id="msg"
