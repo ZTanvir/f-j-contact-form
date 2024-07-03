@@ -171,16 +171,20 @@ body {
   color: var(--red);
   font-size: 0.85rem;
   padding: 3px;
-  visibility: hidden;
+  display: none;
 }
 :is(
-    #contactUs input:invalid ~ .errorMessage,
-    #contactUs textarea:invalid ~ .errorMessage,
-    .inputTypeCheck:has(input:invalid) ~ .errorMessage,
-    .radioQuery:has(input:invalid) ~ .errorMessage
+    #contactUs input:invalid[focus="true"] ~ .errorMessage,
+    #contactUs textarea:invalid[focus="true"] ~ .errorMessage,
+    .inputTypeCheck:has(input:invalid[focus="true"]) ~ .errorMessage,
+    .radioQuery:has(input:invalid[focus="true"]) ~ .errorMessage
   ) {
-  visibility: visible;
+  display: block;
 }
-:is(#contactUs input:invalid, #contactUs textarea:invalid, ) {
+:is(
+    #contactUs input:invalid[focus="true"],
+    #contactUs textarea:invalid[focus="true"],
+
+  ) {
   border: 1px solid var(--red);
 }

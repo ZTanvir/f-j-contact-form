@@ -8,6 +8,8 @@ const FormInput = ({
   onChange,
   errorMsg,
   isRequired,
+  handleOnBlur,
+  focus,
 }) => {
   return (
     <div className={className}>
@@ -21,6 +23,8 @@ const FormInput = ({
         value={value}
         onChange={onChange}
         required={isRequired}
+        onBlur={handleOnBlur}
+        focus={focus}
       />
       <p className="errorMessage">{errorMsg}</p>
     </div>

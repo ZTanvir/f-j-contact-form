@@ -13,6 +13,15 @@ function App() {
     agree: false,
   });
 
+  const [focus, setFocus] = useState({
+    fname: false,
+    lname: false,
+    mail: false,
+    query: false,
+    message: false,
+    agree: false,
+  });
+
   const handleInputData = (e) => {
     setFormValue({ ...formValue, [e.target.name]: e.target.value });
   };
@@ -25,6 +34,14 @@ function App() {
     event.preventDefault();
     console.log(formValue);
   };
+  const handleOnBlur = (e) => {
+    console.log(e.currentTarget.name, !e.currentTarget.name);
+    setFocus({
+      ...focus,
+      [e.currentTarget.name]: true,
+    });
+  };
+
   return (
     <>
       <main>
@@ -41,6 +58,8 @@ function App() {
                 value={formValue[input.name]}
                 onChange={handleInputData}
                 isRequired={input.isRequired}
+                handleOnBlur={handleOnBlur}
+                focus={focus[input.name].toString()}
               />
             ))}
           </div>
@@ -52,6 +71,8 @@ function App() {
             label="Email Address"
             type="email"
             isRequired={true}
+            handleOnBlur={handleOnBlur}
+            focus={focus["mail"].toString()}
           />
           <div className="inputQuery">
             <p>
@@ -66,6 +87,8 @@ function App() {
                   value="general"
                   onChange={handleInputData}
                   checked={formValue["query"] === "general"}
+                  onBlur={handleOnBlur}
+                  focus={focus["query"].toString()}
                   required
                 />
                 General Enquiry
@@ -79,6 +102,8 @@ function App() {
                   value="support"
                   onChange={handleInputData}
                   checked={formValue["query"] === "support"}
+                  onBlur={handleOnBlur}
+                  focus={focus["query"].toString()}
                 />
                 Support Request
               </label>
@@ -96,6 +121,8 @@ function App() {
               value={formValue["message"]}
               onChange={handleInputData}
               rows="4"
+              onBlur={handleOnBlur}
+              focus={focus["message"].toString()}
               required
             ></textarea>
             <p className="errorMessage">This field is required</p>
@@ -109,6 +136,8 @@ function App() {
                 id="agreed"
                 checked={formValue["agree"]}
                 onChange={handleCheckBox}
+                onBlur={handleOnBlur}
+                focus={focus["agree"].toString()}
                 required
               />
               <label htmlFor="agreed">
