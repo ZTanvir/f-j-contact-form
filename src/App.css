@@ -160,6 +160,9 @@ body {
   color: white;
   border: none;
 }
+#contactUs :is(input[type="radio"], input[type="checkbox"]) {
+  accent-color: var(--green-medium);
+}
 .isFieldRequired {
   color: var(--grey-darker);
   font-size: 0.75rem;
@@ -177,4 +180,7 @@ body {
     .radioQuery:has(input:invalid) ~ .errorMessage
   ) {
   visibility: visible;
+}
+:is(#contactUs input:invalid, #contactUs textarea:invalid, ) {
+  border: 1px solid var(--red);
 }
