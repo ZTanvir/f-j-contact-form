@@ -73,6 +73,7 @@ h6 {
 body {
   height: 100vh;
   background-color: var(--green-lighter);
+  font-family: "Karla", sans-serif, Courier, monospace;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,6 +81,7 @@ body {
 
 #contactUs legend {
   font-size: 2rem;
+  font-weight: 600;
 }
 
 #contactUs {
@@ -119,6 +121,7 @@ body {
 .inputFnameLname {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 .inputFnameLname > div {
   flex-grow: 1;
@@ -128,6 +131,7 @@ body {
 .radioQuery {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 :is(.querySupport, .queryGeneral) {
@@ -191,4 +195,9 @@ body {
 }
 .inputQuery [data-islebelcheck="true"] {
   background-color: var(--green-lighter);
+}
+@media screen and (max-width: 500px) {
+  #contactUs {
+    max-width: 320px;
+  }
 }
