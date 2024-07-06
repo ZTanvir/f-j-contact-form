@@ -129,6 +129,7 @@ body {
   display: flex;
   gap: 1rem;
 }
+
 :is(.querySupport, .queryGeneral) {
   flex-grow: 1;
   display: flex;
@@ -187,4 +188,7 @@ body {
 
   ) {
   border: 1px solid var(--red);
+}
+.inputQuery [data-islebelcheck="true"] {
+  background-color: var(--green-lighter);
 }

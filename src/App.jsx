@@ -79,7 +79,10 @@ function App() {
               Query Type <span className="isFieldRequired">*</span>
             </p>
             <div className="radioQuery">
-              <label className="queryGeneral">
+              <label
+                data-islebelcheck={formValue["query"] === "general"}
+                className="queryGeneral"
+              >
                 <input
                   type="radio"
                   name="query"
@@ -94,7 +97,10 @@ function App() {
                 General Enquiry
               </label>
 
-              <label className="querySupport">
+              <label
+                data-islebelcheck={formValue["query"] === "support"}
+                className="querySupport"
+              >
                 <input
                   type="radio"
                   name="query"
