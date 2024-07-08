@@ -32,7 +32,6 @@ function App() {
 
   const handleformSubmit = (event) => {
     event.preventDefault();
-    console.log(formValue);
   };
   const handleOnBlur = (e) => {
     console.log(e.currentTarget.name, !e.currentTarget.name);

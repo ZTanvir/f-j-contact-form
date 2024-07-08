@@ -197,7 +197,10 @@ body {
   background-color: var(--green-lighter);
 }
 @media screen and (max-width: 500px) {
+  body {
+    height: unset;
+  }
   #contactUs {
-    max-width: 320px;
+    margin: 2rem;
   }
 }
