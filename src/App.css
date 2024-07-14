@@ -87,7 +87,6 @@ body {
 #contactUs {
   display: flex;
   flex-direction: column;
-  min-width: 50%;
   margin: 0 auto;
   background-color: var(--white);
   padding: 2rem;
@@ -165,6 +164,11 @@ body {
   color: white;
   border: none;
 }
+#contactUs button[type="submit"]:active,
+#contactUs button[type="submit"]:focus {
+  background-color: var(--grey-darker);
+}
+
 #contactUs :is(input[type="radio"], input[type="checkbox"]) {
   accent-color: var(--green-medium);
 }

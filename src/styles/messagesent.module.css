@@ -4,6 +4,7 @@
   border-radius: 16px;
   color: var(--white);
   margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 .messageSentTitle {
   display: flex;
@@ -12,4 +13,9 @@
 }
 .messageSentTitle > span > img {
   width: 80%;
+}
+@media screen and (max-width: 500px) {
+  .messageSentContainer {
+    margin: 2rem;
+  }
 }

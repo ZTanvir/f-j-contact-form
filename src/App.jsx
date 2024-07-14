@@ -1,7 +1,7 @@
 import "./App.css";
 import formData from "../Utils/FormData/formData";
 import FormInput from "./Components/FormInput";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import MessageSent from "./Components/MessageSent";
 
@@ -26,6 +26,25 @@ function App() {
 
   const [isFormSent, setIsFormSent] = useState(false);
 
+  const resetForm = () => {
+    setFormValue({
+      fname: "",
+      lname: "",
+      mail: "",
+      query: "",
+      message: "",
+      agree: false,
+    });
+    setFocus({
+      fname: false,
+      lname: false,
+      mail: false,
+      query: false,
+      message: false,
+      agree: false,
+    });
+  };
+
   const handleInputData = (e) => {
     setFormValue({ ...formValue, [e.target.name]: e.target.value });
   };
@@ -36,27 +55,10 @@ function App() {
 
   const handleformSubmit = (event) => {
     event.preventDefault();
-    console.log(formValue);
     if (formValue) {
       setIsFormSent(true);
-      setFormValue({
-        fname: "",
-        lname: "",
-        mail: "",
-        query: "",
-        message: "",
-        agree: false,
-      });
-      setFocus({
-        fname: false,
-        lname: false,
-        mail: false,
-        query: false,
-        message: false,
-        agree: false,
-      });
+      resetForm();
     }
-    console.log(Object.values(formValue).length);
   };
 
   const handleOnBlur = (e) => {
@@ -65,6 +67,16 @@ function App() {
       [e.currentTarget.name]: true,
     });
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (isFormSent) {
+        console.log("Render");
+
+        setIsFormSent(false);
+      }
+    }, 5000);
+  }, [isFormSent]);
 
   return (
     <>
