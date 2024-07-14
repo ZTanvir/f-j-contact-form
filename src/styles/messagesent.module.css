@@ -1,0 +1,15 @@
+.messageSentContainer {
+  background-color: var(--grey-darker);
+  padding: 1.5rem;
+  border-radius: 16px;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+.messageSentTitle {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.messageSentTitle > span > img {
+  width: 80%;
+}

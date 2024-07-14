@@ -3,6 +3,8 @@ import formData from "../Utils/FormData/formData";
 import FormInput from "./Components/FormInput";
 import { useState } from "react";
 
+import MessageSent from "./Components/MessageSent";
+
 function App() {
   const [formValue, setFormValue] = useState({
     fname: "",
@@ -22,6 +24,8 @@ function App() {
     agree: false,
   });
 
+  const [isFormSent, setIsFormSent] = useState(false);
+
   const handleInputData = (e) => {
     setFormValue({ ...formValue, [e.target.name]: e.target.value });
   };
@@ -32,9 +36,30 @@ function App() {
 
   const handleformSubmit = (event) => {
     event.preventDefault();
+    console.log(formValue);
+    if (formValue) {
+      setIsFormSent(true);
+      setFormValue({
+        fname: "",
+        lname: "",
+        mail: "",
+        query: "",
+        message: "",
+        agree: false,
+      });
+      setFocus({
+        fname: false,
+        lname: false,
+        mail: false,
+        query: false,
+        message: false,
+        agree: false,
+      });
+    }
+    console.log(Object.values(formValue).length);
   };
+
   const handleOnBlur = (e) => {
-    console.log(e.currentTarget.name, !e.currentTarget.name);
     setFocus({
       ...focus,
       [e.currentTarget.name]: true,
@@ -44,6 +69,7 @@ function App() {
   return (
     <>
       <main>
+        {isFormSent ? <MessageSent /> : null}
         <form id="contactUs" onSubmit={handleformSubmit}>
           <legend>Contact Us</legend>
           <div className="inputFnameLname">
@@ -69,6 +95,8 @@ function App() {
             id={crypto.randomUUID()}
             label="Email Address"
             type="email"
+            value={formValue["mail"]}
+            onChange={handleInputData}
             isRequired={true}
             handleOnBlur={handleOnBlur}
             focus={focus["mail"].toString()}

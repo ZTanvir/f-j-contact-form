@@ -87,7 +87,7 @@ body {
 #contactUs {
   display: flex;
   flex-direction: column;
-  max-width: 768px;
+  min-width: 50%;
   margin: 0 auto;
   background-color: var(--white);
   padding: 2rem;
